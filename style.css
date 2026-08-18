@@ -1,0 +1,9 @@
+
+.centralizar-tudo {
+  display: flex;
+  flex-direction: column;  /* Coloca um elemento abaixo do outro */
+  align-items: center;     /* Alinha tudo no centro na horizontal */
+  text-align: center;      /* Garante que as linhas de texto fiquem centralizadas */
+  min-height: 10vh;       /* Faz o container ocupar a altura inteira da tela */
+  gap: 10px;               /* Cria um espaço idêntico entre cada elemento */
+}
