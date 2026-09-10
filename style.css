@@ -1,9 +1,125 @@
+/*
+   Variáveis de Cores (Paleta de Estética: Tons Pastel, Ouro e Elegância)
+ */
+:root {
+    --cor-fundo-site: #fdfbf7;
+    --cor-cabecalho: #ffffff;
+    --texto-principal: #2c2c2c;
+    --texto-secundario: #6e6e6e;
+    --detalhe-ouro: #c5a880;
+    --detalhe-ouro-hover: #a3875f;
+    --borda-suave: #f0ece6;
+}
 
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cor-fundo-site);
+    color: var(--texto-principal);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--cor-cabecalho);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid var(--borda-suave);
+}
+
+/* Container de Alinhamento */
 .centralizar-tudo {
-  display: flex;
-  flex-direction: column;  /* Coloca um elemento abaixo do outro */
-  align-items: center;     /* Alinha tudo no centro na horizontal */
-  text-align: center;      /* Garante que as linhas de texto fiquem centralizadas */
-  min-height: 10vh;       /* Faz o container ocupar a altura inteira da tela */
-  gap: 10px;               /* Cria um espaço idêntico entre cada elemento */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+    width: 300px;
+    height: auto;
+    display: block;
+}
+
+/* 
+   Navegação e Links Com Animação das linhas
+  */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--texto-secundario);
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+
+.nav a:not(.btn-agendar)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--detalhe-ouro);
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* dar Cor nos  link ao passar o mouse */
+.nav a:not(.btn-agendar):hover {
+    color: var(--detalhe-ouro);
+}
+
+/* Faz a linha expandir de um lado pro outro */
+.nav a:not(.btn-agendar):hover::after {
+    width: 100%;
+}
+
+/* 
+   Botão de Agendamento (Com Animação de Pulso Elástico e Clique)
+   */
+.btn-agendar {
+    background-color: var(--detalhe-ouro);
+    color: #ffffff !important;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(197, 168, 128, 0.2);
+    display: inline-block;
+    
+    /* Transições  combinando cor, sombra e o efeito elástico */
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                background-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Efeito Hover: O botão flutua para cima, cresce levemente e a sombra aumenta */
+.btn-agendar:hover {
+    background-color: var(--detalhe-ouro-hover);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(197, 168, 128, 0.4);
+}
+
+/* Efeito Active: Dá um feedback físico e realista de "pressionado" ao clicar */
+.btn-agendar:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 3px 10px rgba(197, 168, 128, 0.3);
 }
