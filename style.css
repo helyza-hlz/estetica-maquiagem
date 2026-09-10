@@ -1,9 +1,12 @@
-/*
-   Variáveis de Cores (Paleta de Estética: Tons Pastel, Ouro e Elegância)
- */
+/*Cabeçalho do meu projeto: logo, título, menu e botão do menu hambúrguer.*/
+
+/*Variáveis de Cores Paleta do projeto: tons claros, lilás e elegância. */
+
 :root {
     --cor-fundo-site: #fdfbf7;
     --cor-cabecalho: #ffffff;
+    --cor-principal: #CCAAE6;
+    --cor-secundaria: #E2CEF3;
     --texto-principal: #2c2c2c;
     --texto-secundario: #6e6e6e;
     --detalhe-ouro: #c5a880;
@@ -11,19 +14,22 @@
     --borda-suave: #f0ece6;
 }
 
-
+/*Reset básico */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Corpo do site*/
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--cor-fundo-site);
     color: var(--texto-principal);
 }
 
+
+/* Cabeçalho */
 .header {
     position: sticky;
     top: 0;
@@ -33,7 +39,8 @@ body {
     border-bottom: 1px solid var(--borda-suave);
 }
 
-/* Container de Alinhamento */
+
+/* Container de alinhamento. O display: flex coloca os elementos do cabeçalho lado a lado */
 .centralizar-tudo {
     max-width: 1200px;
     margin: 0 auto;
@@ -41,18 +48,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 
+
 /* Logo */
-.logo img {
-    width: 300px;
+.logo img {    width: 120px;
     height: auto;
     display: block;
 }
 
-/* 
-   Navegação e Links Com Animação das linhas
-  */
+
+/*Título do projeto */
+h1 {
+    color: var(--cor-secundaria);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+}
+
+
+/* Segunda parte do título*/
+h1 span {
+    color: var(--cor-principal);
+}
+
+
+/* Menu de navegação */
 .nav {
     display: flex;
     align-items: center;
@@ -60,6 +81,8 @@ body {
     list-style: none;
 }
 
+
+/* Links do menu */
 .nav a {
     text-decoration: none;
     color: var(--texto-secundario);
@@ -71,55 +94,73 @@ body {
 }
 
 
-.nav a:not(.btn-agendar)::after {
+/* Linha abaixo dos links */
+.nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--detalhe-ouro);
-    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: var(--cor-principal);
+    transition: width 0.3s ease;
 }
 
-/* dar Cor nos  link ao passar o mouse */
-.nav a:not(.btn-agendar):hover {
-    color: var(--detalhe-ouro);
+/* Quando passar o mouse pelo link */
+.nav a:hover {
+    color: var(--cor-principal);
 }
 
-/* Faz a linha expandir de um lado pro outro */
-.nav a:not(.btn-agendar):hover::after {
+/* Faz a linha aparecer */
+.nav a:hover::after {
     width: 100%;
 }
 
-/* 
-   Botão de Agendamento (Com Animação de Pulso Elástico e Clique)
-   */
-.btn-agendar {
-    background-color: var(--detalhe-ouro);
-    color: #ffffff !important;
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(197, 168, 128, 0.2);
-    display: inline-block;
-    
-    /* Transições  combinando cor, sombra e o efeito elástico */
-    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                background-color 0.3s ease, 
-                box-shadow 0.3s ease;
+
+/* Botão do menu hambúrguer */
+.hamburguer {
+    display: none;
+    background-color: transparent !important;
+    border: none !important;
+    color: #CCAAE6 !important;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
 }
 
-/* Efeito Hover: O botão flutua para cima, cresce levemente e a sombra aumenta */
-.btn-agendar:hover {
-    background-color: var(--detalhe-ouro-hover);
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 25px rgba(197, 168, 128, 0.4);
-}
+/* Responsividade */
+@media (max-width: 768px) {
 
-/* Efeito Active: Dá um feedback físico e realista de "pressionado" ao clicar */
-.btn-agendar:active {
-    transform: translateY(-1px) scale(0.98);
-    box-shadow: 0 3px 10px rgba(197, 168, 128, 0.3);
+    .hamburguer {
+        display: block !important;
+        background: transparent !important;
+        border: none !important;
+        color: #CCAAE6 !important;
+        font-size: 30px;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .nav.ativo {
+        display: flex;
+    }
+
+    .centralizar-tudo {
+        flex-wrap: wrap;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
 }

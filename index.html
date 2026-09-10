@@ -1,38 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>estética-maquiagem</title>
+    <title>Estética-Maquiagem</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Fonte do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-     <!-- <header é uma tag semântica: ela existe especificamente para marcar 
-     o cabeçalho do site. Class="header" conecta essa tag coma css-->
+    <!--
+        Cabeçalho do meu projeto:
+        logo, título, menu e botão do menu hambúrguer.
+    -->
     <header class="header">
-        <!-- Essa div é so um envelope interno, usado
-         para limitar a largura do conteúdo e organizar os itens com Flexbox -->
-        <div class="centralizar-tudo ">
-            <a href="#" class="">
-                <img src="assets/logo.png" style="width: 120px; height: auto;" alt="Logo do eduplan">
-
-                
+        <!-- Container para organizar os elementos do cabeçalho -->
+        <div class="centralizar-tudo">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="assets/logo.png" alt="Logo do Estética-Maquiagem">
             </a>
-
-            <h1 style="color: #E2CEF3;">Estética<span style="color: #CCAAE6;">-Maquiagem</span></h1>
-
+            <!-- Nome do projeto -->
+            <h1>
+                Estética<span>-Maquiagem</span>
+            </h1>
+            <!-- Menu de navegação -->
             <ul class="nav" id="nav">
+                <li>
+                    <a href="#">Início</a>
+                </li>
+                <li>
+                    <a href="#">Recursos</a>
+                </li>
+                <li>
+                    <a href="#">Sobre</a>
+                </li>
+            </ul>
 
-                    <li><a href="#">início</a></li>
-                    <li><a href="#">recursos</a></li>
-                    <li><a href="#">sobre</a></li>
-
-            </div>
+            <!-- Botão do menu para telas pequenas -->
+            <button class="hamburguer" id="btn-menu">☰</button>
         </div>
-     </header>
+
+    </header>
+    <!-- Arquivo JavaScript -->
+    <script src="script.js"></script>
+
 </body>
 </html>
