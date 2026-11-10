@@ -5,11 +5,15 @@ const botaoMenu = document.querySelector("#btn-menu");
 // Seleciona o menu pela classe
 const menu = document.querySelector(".nav");
 
-// Quando o botão for clicado
-botaoMenu.addEventListener("click", function () {
+// Verifica se os elementos existem
+if (botaoMenu && menu) {
 
-    // Adiciona ou remove a classe "ativo"
-    menu.classList.toggle("ativo");
+    // Quando o botão for clicado
+    botaoMenu.addEventListener("click", function () {
 
-});
+        // Adiciona ou remove a classe "ativo"
+        menu.classList.toggle("ativo");
 
+    });
+
+}

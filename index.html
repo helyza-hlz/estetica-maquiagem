@@ -1,51 +1,189 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Estética-Maquiagem</title>
+
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte do Google -->
+
+    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonte dos títulos -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet">
+
+    <!-- Fonte dos textos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Ícones do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet">
 </head>
+
 <body>
-    <!--
-        Cabeçalho do meu projeto:
-        logo, título, menu e botão do menu hambúrguer.
-    -->
+
+    <!-- CABEÇALHO -->
     <header class="header">
-        <!-- Container para organizar os elementos do cabeçalho -->
+
         <div class="centralizar-tudo">
+
             <!-- Logo -->
             <a href="#" class="logo">
-                <img src="assets/logo.png" alt="Logo do Estética-Maquiagem">
+                <img src="./assets/logo.png"
+                    alt="Logo do Estética-Maquiagem">
             </a>
+
             <!-- Nome do projeto -->
-            <h1>
+            <h2 class="nome-projeto">
                 Estética<span>-Maquiagem</span>
-            </h1>
+            </h2>
+
             <!-- Menu de navegação -->
             <ul class="nav" id="nav">
+
                 <li>
-                    <a href="#">Início</a>
+                    <a href="#inicio">Início</a>
                 </li>
+
                 <li>
-                    <a href="#">Recursos</a>
+                    <a href="#servicos">Recursos</a>
                 </li>
+
                 <li>
-                    <a href="#">Sobre</a>
+                    <a href="#sobre">Sobre</a>
                 </li>
+
             </ul>
 
             <!-- Botão do menu para telas pequenas -->
-            <button class="hamburguer" id="btn-menu">☰</button>
+            <button class="hamburguer" id="btn-menu"
+                aria-label="Abrir menu">
+                ☰
+            </button>
+
         </div>
 
     </header>
-    <!-- Arquivo JavaScript -->
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- HERO: PRIMEIRA SEÇÃO DO SITE -->
+        <section class="hero" id="inicio">
+
+            <div class="hero-inner">
+
+                <!-- COLUNA DA ESQUERDA: TEXTOS E BOTÕES -->
+                <div class="hero-texto">
+
+                    <!-- Etiqueta acima do título -->
+                    <span class="hero-etiqueta">
+                        Beleza, cuidado e autoestima
+                    </span>
+
+                    <!-- Título principal -->
+                    <h1 class="hero-titulo">
+                        Realce sua beleza com
+                        <span>cuidado e elegância.</span>
+                    </h1>
+
+                    <!-- Descrição -->
+                    <p class="hero-descricao">
+                        Descubra um espaço dedicado à estética e à
+                        maquiagem. Conheça nossos procedimentos,
+                        encontre profissionais e cuide de você
+                        com carinho e qualidade.
+                    </p>
+
+                    <!-- BOTÕES -->
+                    <div class="hero-botoes">
+
+                        <a href="#servicos"
+                            class="btn btn-primario btn-grande">
+                            Conheça nossos serviços
+                        </a>
+
+                        <a href="#sobre"
+                            class="btn btn-contorno btn-grande">
+
+                            <span class="material-symbols-outlined">
+                                favorite
+                            </span>
+
+                            Saiba mais
+                        </a>
+
+                    </div>
+
+
+                    <!-- LISTA COM AS TRÊS VANTAGENS -->
+                    <ul class="hero-vantagens">
+
+                        <li>
+
+                            <span class="material-symbols-outlined">
+                                verified
+                            </span>
+
+                            <p>
+                                <strong>Qualidade</strong>
+                                Serviços especializados
+                            </p>
+
+                        </li>
+
+                        <li>
+
+                            <span class="material-symbols-outlined">
+                                spa
+                            </span>
+
+                            <p>
+                                <strong>Bem-estar</strong>
+                                Cuidado personalizado
+                            </p>
+
+                        </li>
+
+                        <li>
+
+                            <span class="material-symbols-outlined">
+                                schedule
+                            </span>
+
+                            <p>
+                                <strong>Praticidade</strong>
+                                Agendamento fácil
+                            </p>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- COLUNA DA DIREITA: IMAGEM -->
+                <img src="assets/hero-maquiagem.png.png" alt="Produtos de maquiagem e acessórios de beleza" class="hero-imagem">
+
+            </div>
+
+        </section>
+
+        <!-- As próximas seções do projeto podem ser adicionadas aqui -->
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
